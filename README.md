@@ -12,14 +12,12 @@ It's usually in your homedir somewhere.
 ## Folder structure
 
 If the Library folder is called ExampleFooLibrary
- - it must contains a folder 'library'
- - which must contain a file ExampleFooLibrary.jar
- - it must(?) contain a file library.properties
+ - it must contains a folder `ExampleFooLibrary/library`
+ - it must(?) contain a file `ExampleFooLibrarylibrary.properties`
+ - it must contain a file `ExampleFooLibrary/library/ExampleFooLibrary.jar`
 
-It contain lots of unrelated things.
-
-The 'build' folder in this dir is not required.
-
+It can contain lots of unrelated things.
+The 'build' folder in this dir is not required;
 This 'README.txt' is not required.
 
 ## Import logic
@@ -68,4 +66,7 @@ jar -cf ../../library/ExampleFooLibrary.jar .
   
   
 ```
+
+If you have problems compiling, you may be using the wrong java
+version (JRE or JDK). Check what `java -version` and `javac -version` say.
 
