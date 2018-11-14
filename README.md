@@ -30,10 +30,10 @@ That package contains two classes, `ExampleBar` and `ExampleQuz`.
 If you 'import' the library in the Processing app, all 
 it does is write 
 
-`import ExampleBazPackage.*`
+`import nl.kw.processing.ExampleBazPackage.*`
 
 in your code. And when you run your code, when compiling,
-it tries to import the classes from the jar in the library folder.
+it tries to read the classes from the jar file in the library folder.
 
 In the jar file, there could be more packages (?). 
 Importing it would then cause more import statements
