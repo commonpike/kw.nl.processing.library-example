@@ -24,9 +24,11 @@ This 'README.txt' is not required.
 
 ## Import logic
 
-You will notice this ExampleFooLibrary contains
-one jar file, the ExampleBazPackage.jar. If you 'import'
-the library in the Processing app, all it does is write 
+You will notice this ExampleFooLibrary only contains
+one jar file, the ./library/ExampleFooLibrary.jar. 
+This only contains one package, the `ExampleBazPackage`.
+If you 'import' the library in the Processing app, all 
+it does is write 
 
 `import ExampleBazPackage.*`
 
@@ -34,10 +36,10 @@ in the code.
 
 In the jar file, there could be more packages (?). 
 Importing it would then cause more import statements
-to appear in the code.
+to be added to your code, that's all.
 
-In the folder, there could also be more jar files. For these
-files, import statements will not be written automatically.
+In the library folder, there could also be more jar files. 
+For these files, import statements will not be written automatically.
 Only the jar file with the exact same name as the library
 gets imported automagically.
 
