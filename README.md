@@ -1,15 +1,15 @@
 20181114*pike
-#Example Processing 3 Library
+# Example Processing 3 Library
 Does nothing, just the structure
 
-##Location
+## Location
 
 This whole folder should go into your "sketchbook location",
 also sometimes called the "processing library directory".
 You can find it's location in the Processing app, under preferences.
 It's usually in your homedir somewhere.
 
-##Folder structure
+## Folder structure
 
 If the Library folder is called ExampleFooLibrary
  - it must contains a folder 'library'
@@ -22,7 +22,7 @@ The 'build' folder in this dir is not required.
 
 This 'README.txt' is not required.
 
-##Import logic
+## Import logic
 
 You will notice this ExampleFooLibrary contains
 one jar file, the ExampleBazPackage.jar. If you 'import'
@@ -44,7 +44,7 @@ gets imported automagically.
 See also:
 https://github.com/processing/processing/wiki/Library-Basics
 
-##Compiling 
+## Compiling 
 
 Most people will use some IDE like eclipse to generate
 the required jar file. But the hard way is
