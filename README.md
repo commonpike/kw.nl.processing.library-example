@@ -22,15 +22,18 @@ This 'README.txt' is not required.
 
 ## Import logic
 
-You will notice this ExampleFooLibrary only contains
-one jar file, the ./library/ExampleFooLibrary.jar. 
-This only contains one package, the `ExampleBazPackage`.
+You will notice this library only contains
+one jar file, the `./library/ExampleFooLibrary.jar`. 
+That jar only contains one java package, the `nl.kw.processing.ExampleBazPackage`.
+That package contains two classes, `ExampleBar` and `ExampleQuz`.
+
 If you 'import' the library in the Processing app, all 
 it does is write 
 
 `import ExampleBazPackage.*`
 
-in the code.
+in your code. And when you run your code, when compiling,
+it tries to import the classes from the jar in the library folder.
 
 In the jar file, there could be more packages (?). 
 Importing it would then cause more import statements
