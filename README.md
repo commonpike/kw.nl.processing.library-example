@@ -6,17 +6,17 @@ Does nothing, just the structure
 
 This whole folder should go into your "sketchbook location",
 also sometimes called the "processing library directory".
-You can find it's location in the Processing app, under preferences.
-It's usually in your homedir somewhere.
+You can find its location in the Processing app, in the menu,
+under preferences. It's usually in your homedir somewhere.
 
 ## Folder structure
 
-If the Library folder is called ExampleFooLibrary
+If the Library folder is called `ExampleFooLibrary`
  - it must contains a folder `ExampleFooLibrary/library`
  - it must(?) contain a file `ExampleFooLibrarylibrary.properties`
  - it must contain a file `ExampleFooLibrary/library/ExampleFooLibrary.jar`
 
-It can contain lots of unrelated things.
+It may contain lots of other unrelated things.
 The 'build' folder in this dir is not required;
 This 'README.txt' is not required.
 
@@ -61,14 +61,22 @@ the required jar file. But the hard way is
 cd build/source
 vi ExampleBar.java
 vi ExampleQuz.java
-cd ../compiled
+cd -
 
+cd build/compiled
 javac -d . -classpath /path/to/processing/core.jar ../source/*.java
-  
-jar -cf ../../library/ExampleFooLibrary.jar .
+cd -
+
+cd build/
+jar -cf ../library/ExampleFooLibrary.jar -C compiled .
+cd -
   
   
 ```
+
+or just take a look at `bin/compile.sh` in this repo.
+
+## Problems 
 
 If you have problems compiling, you may be using the wrong java
 version (JRE or JDK). Check what `java -version` and `javac -version` say.
