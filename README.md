@@ -1,6 +1,10 @@
 20181114*pike
 # Example Processing 3 Library
-Does nothing, just the structure
+
+Does nothing. Just explains a library structure and is a working example.
+
+This README is best read at 
+https://github.com/commonpike/nl.kw.processing.library-example
 
 ## Location
 
@@ -13,12 +17,28 @@ under preferences. It's usually in your homedir somewhere.
 
 If the Library folder is called `ExampleFooLibrary`
  - it must contains a folder `ExampleFooLibrary/library`
- - it must(?) contain a file `ExampleFooLibrarylibrary.properties`
+ - it must contain a file `ExampleFooLibrarylibrary.properties`
  - it must contain a file `ExampleFooLibrary/library/ExampleFooLibrary.jar`
 
-It may contain lots of other unrelated things.
-The 'build' folder in this dir is not required;
-This 'README.txt' is not required.
+If it has these things, and it is in the right location,
+you can see it in your Processing app under Sketch > Import Library
+
+This is all that is required to work. But according to the 
+guidelines, this folder should also contain
+
+ - ExampleFooLibrary/reference/ - documentation in HTML format as generated from Javadoc
+ - ExampleFooLibrary/examples/  - a set of example sketches 
+ - ExampleFooLibrary/src/ - java source
+
+The folder may contain lots of other unrelated things.
+ - ExampleFooLibrary/bin  is not required;
+ - ExampleFooLibrary/build is not required;
+ - ExampleFooLibrary/dist is not required;
+ - ExampleFooLibrary/README.md is not required.
+ 
+See also:
+https://github.com/processing/processing/wiki/Library-Guidelines
+
 
 ## Import logic
 
@@ -44,40 +64,58 @@ For these files, import statements will not be written automatically.
 Only the jar file with the exact same name as the library
 gets imported automagically.
 
+
+
 See also:
 https://github.com/processing/processing/wiki/Library-Basics
+https://processing.org/tutorials/eclipse/
 
 ## Compiling 
 
 Most people will use some IDE like eclipse to generate
 the required jar file. But the hard way is
 
-- write *.java files like the ones in ./source, using vi ofcourse:-)
+- write *.java files like the ones in ./src, using vi ofcourse :-)
 - compile the .java files to .class files 
 - zip the .class files to a .jar  
 
 ```
 
-cd build/source
+cd src
 vi ExampleBar.java
-vi ExampleQuz.java
-cd -
+vi folder/foo/whatever/ExampleQuz.java
+cd ../
 
-cd build/compiled
-javac -d . -classpath /path/to/processing/core.jar ../source/*.java
-cd -
+javac -d build/compile -classpath /path/to/processing/core.jar \
+ ./src/*.java ./src/folder/foo/whatever/*java
 
-cd build/
-jar -cf ../library/ExampleFooLibrary.jar -C compiled .
-cd -
+jar -cf library/ExampleFooLibrary.jar -C build/compile .
   
   
 ```
 
-or just take a look at `bin/compile.sh` in this repo.
+or just take a look at `bin/compile.sh` in this repo,
+for linux and mac users.
 
 ## Problems 
 
 If you have problems compiling, you may be using the wrong java
 version (JRE or JDK). Check what `java -version` and `javac -version` say.
+
+If your code came from a sketch, and during compiling you get errors like 
+``error: cannot find symbol (...) createShape``
+remember your code is not part of a PApplet anymore. 
+`createShape` is now `processing.core.PApplet.createShape()`
+But createShape() is not a  static method and needs a PApplet
+to work. So you'll have to rewrite your code.
+
+`random()` and `noise()` are also not static functions on PApplet, 
+and don't belong to java.lang.Math either. You'll have to rewrite
+them.
+
+Also remember, `color` is not a java type. Rewrite it to `int`.
+
+Also a lot of math functions like `abs()`, `floor()` etc. can
+be rewritten to `Math.abs()`, `Math.floor()`. 
+
 
