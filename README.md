@@ -16,8 +16,8 @@ under preferences. It's usually in your homedir somewhere.
 ## Folder structure
 
 If the Library folder is called `ExampleFooLibrary`
- - it must contains a folder `ExampleFooLibrary/library`
- - it must contain a file `ExampleFooLibrarylibrary.properties`
+ - it must contain a folder `ExampleFooLibrary/library`
+ - it must contain a file `ExampleFooLibrary/library.properties`
  - it must contain a file `ExampleFooLibrary/library/ExampleFooLibrary.jar`
 
 If it has these things, and it is in the right location,
@@ -26,11 +26,12 @@ you can see it in your Processing app under Sketch > Import Library
 This is all that is required to work. But according to the 
 guidelines, this folder should also contain
 
- - ExampleFooLibrary/reference/ - documentation in HTML format as generated from Javadoc
- - ExampleFooLibrary/examples/  - a set of example sketches 
- - ExampleFooLibrary/src/ - java source
+ - `ExampleFooLibrary/reference/` - documentation in HTML format as generated from Javadoc
+ - `ExampleFooLibrary/examples/`  - a set of example sketches 
+ - `ExampleFooLibrary/src/` - java source
 
-The folder may contain lots of other unrelated things.
+The folder may contain other unrelated things.
+
  - ExampleFooLibrary/bin  is not required;
  - ExampleFooLibrary/build is not required;
  - ExampleFooLibrary/dist is not required;
@@ -86,10 +87,10 @@ vi ExampleBar.java
 vi folder/foo/whatever/ExampleQuz.java
 cd ../
 
-javac -d build/compile -classpath /path/to/processing/core.jar \
+javac -d build/ -classpath /path/to/processing/core.jar \
  ./src/*.java ./src/folder/foo/whatever/*java
 
-jar -cf library/ExampleFooLibrary.jar -C build/compile .
+jar -cf library/ExampleFooLibrary.jar -C build/ .
   
   
 ```
