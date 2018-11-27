@@ -1,10 +1,16 @@
 20181114*pike
 # Example Processing 3 Library
 
-Does nothing. Just explains a library structure and is a working example.
+This does nothing. Just explains a library structure and is a working example.
 
 This README is best read at 
 https://github.com/commonpike/nl.kw.processing.library-example
+
+You can download the library at 
+https://commonpike.github.io/nl.kw.processing.library-example/dist/ExampleFooLibrary.zip
+
+It has a summary at 
+https://commonpike.github.io/nl.kw.processing.library-example/dist/summary.html
 
 ## Install location
 
