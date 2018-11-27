@@ -18,10 +18,13 @@ If you cloned it from GIT, rename it.
 
 ## Folder structure
 
-If the Library folder is called `ExampleFooLibrary`
+If the Library folder is called `ExampleFooLibrary`, the
+following files, with those exact names, are required:
+
  - it must contain a folder `ExampleFooLibrary/library`
  - it must contain a file `ExampleFooLibrary/library.properties`
  - it must contain a file `ExampleFooLibrary/library/ExampleFooLibrary.jar`
+
 
 This is all that is required to get it to work. 
 If it has these things, and it is in the right location,
@@ -30,16 +33,16 @@ you can see it in your Processing app under Sketch > Import Library
 The folder may also contain other things, as this
 one does. Some are related to _publishing_ the library 
 (read more below). Some are folders I personally use to 
-_compile_ the java code on the spot. You can delete all that,
-and it will still work.
+_compile_ the java code on the spot or keep some public
+stuff. You can delete all that, and it will still work.
 
 
 ## Import logic
 
 You will notice this library only contains
 one jar file, the `./library/ExampleFooLibrary.jar`. 
-That jar only contains one java package, the `nl.kw.processing.ExampleBazPackage`.
-That package contains two classes, `ExampleBar` and `ExampleQuz`.
+The jar contains two java classes, `ExampleBar` and `ExampleQuz`.
+Both belong to the same java package, `nl.kw.processing.ExampleBazPackage`.
 
 If you 'import' the library in the Processing app, all 
 it does is write 
@@ -49,14 +52,17 @@ it does is write
 in your code. And when you run your code, when compiling,
 it tries to read the classes from the jar file in the library folder.
 
+Notice how activating the ExampleFooLibrary imports the 
+ExampleBazPackage, and consider why it does that…
+
 In the jar file, there could be more packages (?). 
 Importing it would then cause more import statements
 to be added to your code, that's all.
 
 In the library folder, there could also be more jar files. 
-For these files, import statements will not be written automatically.
+For these files, import statements will _not_ be written automatically.
 Only the jar file with the exact same name as the library
-gets imported automagically.
+gets imported automagically when you ‘activate’ the library.
 
 
 
