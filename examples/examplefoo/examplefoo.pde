@@ -5,10 +5,15 @@ ExampleQuz eq = new ExampleQuz(this);
 int i = 0;
 
 void setup() {
-  
+  println();
+  println("-----------------------");
   println("This does nothing.");
-  println("However, you may want to check the console output.");
-  println("Class ExampleQuz will print some output there.");
+  println("Please read the documentation at");
+  println("https://github.com/commonpike/nl.kw.processing.library-example");
+  println();
+  println("You may want to check the console output though.");
+  println("Class ExampleQuz will print some stuff there.");
+  println("-----------------------");
   println();
 
 }

@@ -6,12 +6,15 @@ Does nothing. Just explains a library structure and is a working example.
 This README is best read at 
 https://github.com/commonpike/nl.kw.processing.library-example
 
-## Location
+## Install location
 
 This whole folder should go into your "sketchbook location",
 also sometimes called the "processing library directory".
 You can find its location in the Processing app, in the menu,
 under preferences. It's usually in your homedir somewhere.
+
+This whole folder should be called ‘ExampleFooLibrary’.
+If you cloned it from GIT, rename it.
 
 ## Folder structure
 
@@ -20,25 +23,14 @@ If the Library folder is called `ExampleFooLibrary`
  - it must contain a file `ExampleFooLibrary/library.properties`
  - it must contain a file `ExampleFooLibrary/library/ExampleFooLibrary.jar`
 
+This is all that is required to get it to work. 
 If it has these things, and it is in the right location,
 you can see it in your Processing app under Sketch > Import Library
 
-This is all that is required to work. But according to the 
-guidelines, this folder should also contain
-
- - `ExampleFooLibrary/reference/` - documentation in HTML format as generated from Javadoc
- - `ExampleFooLibrary/examples/`  - a set of example sketches 
- - `ExampleFooLibrary/src/` - java source
-
-The folder may contain other unrelated things.
-
- - ExampleFooLibrary/bin  is not required;
- - ExampleFooLibrary/build is not required;
- - ExampleFooLibrary/dist is not required;
- - ExampleFooLibrary/README.md is not required.
- 
-See also:
-https://github.com/processing/processing/wiki/Library-Guidelines
+The folder may also contain other things, as this
+one does. Some are related to /publishing/ the library 
+(read more below). Some are folders I use to /compile/
+the java code on the spot. 
 
 
 ## Import logic
@@ -98,7 +90,7 @@ jar -cf library/ExampleFooLibrary.jar -C build/ .
 or just take a look at `bin/compile.sh` in this repo,
 for linux and mac users.
 
-## Problems 
+## Compile problems 
 
 If you have problems compiling, you may be using the wrong java
 version (JRE or JDK). Check what `java -version` and `javac -version` say.
@@ -119,4 +111,37 @@ Also remember, `color` is not a java type. Rewrite it to `int`.
 Also a lot of math functions like `abs()`, `floor()` etc. can
 be rewritten to `Math.abs()`, `Math.floor()`. 
 
+## Publishing
 
+As mentioned under /folder structure/ above, 
+these files are needed to get it to work 
+
+ - the folder `ExampleFooLibrary/library`
+ - the file `ExampleFooLibrary/library.properties`
+ - the file `ExampleFooLibrary/library/ExampleFooLibrary.jar`
+
+If you want to publish it, you must follow some additional
+guidelines. According to these guidelines, this folder 
+should also contain
+
+ - `ExampleFooLibrary/reference/` - documentation in HTML format as generated from Javadoc
+ - `ExampleFooLibrary/examples/`  - a set of example PDE sketches 
+ - `ExampleFooLibrary/src/` - java source
+
+So these folders in this library are not needed:
+
+ - ExampleFooLibrary/bin  is not required;
+ - ExampleFooLibrary/build is not required;
+ - ExampleFooLibrary/dist is not required;
+ - ExampleFooLibrary/README.md is not required.
+
+Again according to the guidelines, you need to have
+two files on a public location with a fixed url. I keep
+a copy of those to files in the `dist/` folder:
+
+ - a HTML summary ; see `dist/summary.html`
+ - a zip file with the required files in it; see `dist/ExampleFooLibrary.zip` on GIT
+
+ 
+See also:
+https://github.com/processing/processing/wiki/Library-Guidelines
