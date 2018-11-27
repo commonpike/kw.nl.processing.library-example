@@ -28,9 +28,9 @@ If it has these things, and it is in the right location,
 you can see it in your Processing app under Sketch > Import Library
 
 The folder may also contain other things, as this
-one does. Some are related to //publishing// the library 
+one does. Some are related to _publishing_ the library 
 (read more below). Some are folders I personally use to 
-//compile// the java code on the spot. You can delete all that,
+_compile_ the java code on the spot. You can delete all that,
 and it will still work.
 
 
@@ -113,12 +113,12 @@ java.lang.Math. You'll have to rewrite them.
 
 Also remember, `color` is not a java type. Rewrite it to `int`.
 
-All this rewriting is done in the PDE by the //PDE Precompiler//,
+All this rewriting is done in the PDE by the _PDE Precompiler_,
 but now you’ll have to do it by hand. 
 
 ## Publishing
 
-As mentioned under //folder structure// above, 
+As mentioned under _folder structure_ above, 
 only these files are needed to get it to work:
 
  - the folder `ExampleFooLibrary/library`
