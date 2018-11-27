@@ -28,9 +28,10 @@ If it has these things, and it is in the right location,
 you can see it in your Processing app under Sketch > Import Library
 
 The folder may also contain other things, as this
-one does. Some are related to /publishing/ the library 
-(read more below). Some are folders I use to /compile/
-the java code on the spot. 
+one does. Some are related to //publishing// the library 
+(read more below). Some are folders I personally use to 
+//compile// the java code on the spot. You can delete all that,
+and it will still work.
 
 
 ## Import logic
@@ -61,6 +62,8 @@ gets imported automagically.
 
 See also:
 https://github.com/processing/processing/wiki/Library-Basics
+
+See also:
 https://processing.org/tutorials/eclipse/
 
 ## Compiling 
@@ -98,23 +101,25 @@ version (JRE or JDK). Check what `java -version` and `javac -version` say.
 If your code came from a sketch, and during compiling you get errors like 
 ``error: cannot find symbol (...) createShape``
 remember your code is not part of a PApplet anymore. 
-`createShape` is now `processing.core.PApplet.createShape()`
-But createShape() is not a  static method and needs a PApplet
-to work. So you'll have to rewrite your code.
-
-`random()` and `noise()` are also not static functions on PApplet, 
-and don't belong to java.lang.Math either. You'll have to rewrite
-them.
-
-Also remember, `color` is not a java type. Rewrite it to `int`.
+`createShape` is now knwon as `processing.core.PApplet.createShape()`;
+but since that is not a  static method it needs a PApplet
+to work. You will have to rewrite your code.
 
 Also a lot of math functions like `abs()`, `floor()` etc. can
 be rewritten to `Math.abs()`, `Math.floor()`. 
 
+But Processings `random()` and `noise()` don't belong to 
+java.lang.Math. You'll have to rewrite them.
+
+Also remember, `color` is not a java type. Rewrite it to `int`.
+
+All this rewriting is done in the PDE by the //PDE Precompiler//,
+but now you’ll have to do it by hand. 
+
 ## Publishing
 
-As mentioned under /folder structure/ above, 
-these files are needed to get it to work 
+As mentioned under //folder structure// above, 
+only these files are needed to get it to work:
 
  - the folder `ExampleFooLibrary/library`
  - the file `ExampleFooLibrary/library.properties`
@@ -128,7 +133,7 @@ should also contain
  - `ExampleFooLibrary/examples/`  - a set of example PDE sketches 
  - `ExampleFooLibrary/src/` - java source
 
-So these folders in this library are not needed:
+So these folders in this library are not needed at all:
 
  - ExampleFooLibrary/bin  is not required;
  - ExampleFooLibrary/build is not required;
@@ -136,12 +141,17 @@ So these folders in this library are not needed:
  - ExampleFooLibrary/README.md is not required.
 
 Again according to the guidelines, you need to have
-two files on a public location with a fixed url. I keep
-a copy of those to files in the `dist/` folder:
+two files on a public location with a fixed url. This is 
+what you will ‘publish’. I keep a copy of those two
+files in the `dist/` folder:
 
  - a HTML summary ; see `dist/summary.html`
  - a zip file with the required files in it; see `dist/ExampleFooLibrary.zip` on GIT
 
- 
+Put these files online (I use github.io) and communicate
+the urls with the Processing maintainers. If they agree
+to publish it, apparently they will check the library.properties
+in the published zip regularly to see if there is a new version.
+
 See also:
 https://github.com/processing/processing/wiki/Library-Guidelines
