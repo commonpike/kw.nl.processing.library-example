@@ -34,6 +34,7 @@ The folder may contain other unrelated things.
 
  - ExampleFooLibrary/bin  is not required;
  - ExampleFooLibrary/build is not required;
+ - ExampleFooLibrary/docs is not required;
  - ExampleFooLibrary/dist is not required;
  - ExampleFooLibrary/README.md is not required.
  
@@ -69,6 +70,8 @@ gets imported automagically.
 
 See also:
 https://github.com/processing/processing/wiki/Library-Basics
+
+See also:
 https://processing.org/tutorials/eclipse/
 
 ## Compiling 
