@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# prisonerjohn+p5@gmail.com
+# https://github.com/processing/processing/wiki/Library-Guidelines
+
 cd `dirname $0`/..
 
 LIBNAME=$(basename "$PWD")
@@ -18,10 +21,17 @@ rm dist/$libname.zip
 echo "Some cleanup .."
 find . -name '.DS_Store' -exec rm -v {} \;
 
-echo "Zipping everything to dist/$libname.zip .."
-zip -r dist/$libname.zip *
+echo "Zipping stuff to dist/$libname.zip .."
 
-  
+zip -r dist/$libname.zip \
+	src \
+	docs \
+	library \
+	reference \
+	examples \
+	library.properties \
+	README.md
+	
 echo All done.
 
 
