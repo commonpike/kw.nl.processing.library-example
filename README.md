@@ -41,6 +41,16 @@ The folder may contain other unrelated things.
 See also:
 https://github.com/processing/processing/wiki/Library-Guidelines
 
+## Distribution
+
+Libraries can be distributed as zipped files, so the p3 team
+can make them available inside the p5 gui. Allthough it is
+not mentioned anywhere, the zip should not contain much more 
+than the folders mentioned by the guidelines or they may be 
+rejected by the p3 team.
+
+Your library may be rejected for any other reason, too.
+This library was rejected because it was not deemed useful.
 
 ## Import logic
 
