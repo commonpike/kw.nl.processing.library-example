@@ -166,7 +166,7 @@ But these folders in this library are not required:
 Again according to the guidelines, you need to have
 two files on a public location with a fixed url. This is 
 what you will 'publish'. I keep a copy of those two
-files in the `docs/` and `dist` folders:
+files in the `docs/` and `dist/` folders:
 
  - a HTML summary ; see `docs/summary.html`
  - a zip file with the *only* the required files in it; see `dist/ExampleFooLibrary.zip` on GIT
