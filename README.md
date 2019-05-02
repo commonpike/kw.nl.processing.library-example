@@ -10,7 +10,7 @@ You can download the library at
 https://commonpike.github.io/nl.kw.processing.library-example/dist/ExampleFooLibrary.zip
 
 It has a summary at 
-https://commonpike.github.io/nl.kw.processing.library-example/dist/summary.html
+https://commonpike.github.io/nl.kw.processing.library-example/docs/summary.html
 
 ## Install location
 
@@ -126,18 +126,27 @@ java.lang.Math. You'll have to rewrite them.
 Also remember, `color` is not a java type. Rewrite it to `int`.
 
 All this rewriting is done in the PDE by the _PDE Precompiler_,
-but now you’ll have to do it by hand. 
+but now you'll have to do it by hand. 
 
 ## Publishing
 
+According to guidelines, your libraries should adhere
+to some naming rules:
+
+
+  - Libraries, or classes inside them, should not be prefixed with "P" 
+  - Same goes for using "Processing", "Pro", or "P5" 
+  - The same goes for suffixes
+  - Don't use ``processing`` as the prefix for your library packages
+  
 As mentioned under _folder structure_ above, 
-only these files are needed to get it to work:
+only these files are needed to get your library to work:
 
  - the folder `ExampleFooLibrary/library`
  - the file `ExampleFooLibrary/library.properties`
  - the file `ExampleFooLibrary/library/ExampleFooLibrary.jar`
 
-If you want to publish it, you must follow some additional
+But if you want to publish it, you must follow some additional
 guidelines. According to these guidelines, this folder 
 should also contain
 
@@ -145,7 +154,7 @@ should also contain
  - `ExampleFooLibrary/examples/`  - a set of example PDE sketches 
  - `ExampleFooLibrary/src/` - java source
 
-So these folders in this library are not needed at all:
+But these folders in this library are not required:
 
  - ExampleFooLibrary/bin  is not required;
  - ExampleFooLibrary/build is not required;
@@ -160,7 +169,7 @@ what you will 'publish'. I keep a copy of those two
 files in the `docs/` and `dist` folders:
 
  - a HTML summary ; see `docs/summary.html`
- - a zip file with the *only* required files in it; see `dist/ExampleFooLibrary.zip` on GIT
+ - a zip file with the *only* the required files in it; see `dist/ExampleFooLibrary.zip` on GIT
 
 Put these files online (I use github.io) and communicate
 the urls with the Processing maintainers. If they agree
@@ -169,3 +178,6 @@ in the published zip regularly to see if there is a new version.
 
 See also:
 https://github.com/processing/processing/wiki/Library-Guidelines
+
+See also:
+https://github.com/processing/processing/wiki/Library-Basics#library-naming-rules
