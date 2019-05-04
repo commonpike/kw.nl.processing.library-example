@@ -163,18 +163,22 @@ But these folders in this library are not required:
  - ExampleFooLibrary/README.md is not required.
 
 
-Again according to the guidelines, you need to have
-two files on a public location with a fixed url. This is 
-what you will 'publish'. I keep a copy of those two
-files in the `docs/` and `dist/` folders:
+What you will be publishing are two files on a public location 
+with a fixed url. I keep a copy of those two
+files in the git repo, in the `docs/` and `dist/` folders:
 
- - a HTML summary ; see `docs/summary.html`
- - a zip file with the *only* the required files in it; see `dist/ExampleFooLibrary.zip` on GIT
+ - a HTML summary (see `docs/summary.html` for a template)
+ - a zip file with the *only the required files* in it (see `dist/ExampleFooLibrary.zip`)
+
+The zip file should unzip to a single folder with the above-mentioned files 
+contained in that folder.
+
+See `bin/createzip.sh` for an example on how to create that zip.
 
 Put these files online (I use github.io) and communicate
 the urls with the Processing maintainers. If they agree
 to publish it, apparently they will check the library.properties
-in the published zip regularly to see if there is a new version.
+in the remote published zip regularly to see if there is a new version.
 
 See also:
 https://github.com/processing/processing/wiki/Library-Guidelines
