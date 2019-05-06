@@ -2,24 +2,34 @@
 
 cd `dirname $0`/..
 
-LIBNAME=$(basename "$PWD").jar
-COREJAR=/3rdparty/Processing.app/Contents/Java/core.jar
-
-echo
-
-read -p "Where is Processings core.jar [$COREJAR]? " corejar
-if [ "$corejar" = "" ]; then
+if [ "$COREJAR" = "" ]; then
+	COREJAR=/3rdparty/Processing.app/Contents/Java/core.jar
+	read -e -p "Where is Processings core.jar [$COREJAR]? " corejar
+	if [ "$corejar" = "" ]; then
+		corejar=$COREJAR
+	fi
+else
 	corejar=$COREJAR
 fi
 
-read -p "What is the libraries name [$LIBNAME]? " libname
-if [ "$libname" = "" ]; then
+
+if [ "$LIBNAME" = "" ]; then
+	LIBNAME=$(basename "$PWD").jar
+	read -p "What is the libraries name [$LIBNAME]? " libname
+	if [ "$libname" = "" ]; then
+		libname=$LIBNAME
+	fi
+else
 	libname=$LIBNAME
 fi
+
+
+
 
 # vi src/ExampleBar.java
 # vi src/folder/foo/whatever/ExampleQuz.java
 
+echo
 echo 'Compiling src/**.java to ./build/*.class ..'
 
 find src -name "*.java" -print0 | xargs -0 \

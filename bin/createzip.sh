@@ -5,16 +5,18 @@
 OPWD=`pwd`
 cd `dirname $0`/..
 
-LIBNAME=$(basename "$PWD")
-LIBDIRNAME=$LIBNAME
 
-echo
-
-read -p "What is the libraries name [$LIBNAME]? " libname
-if [ "$libname" = "" ]; then
+if [ "$LIBNAME" = "" ]; then
+	LIBNAME=$(basename "$PWD").jar
+	read -p "What is the libraries name [$LIBNAME]? " libname
+	if [ "$libname" = "" ]; then
+		libname=$LIBNAME
+	fi
+else
 	libname=$LIBNAME
 fi
 
+LIBDIRNAME=$(basename "$PWD")
 
 FILES=""
 

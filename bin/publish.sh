@@ -6,6 +6,22 @@ cd `dirname $0`/..
 echo Publishing ...
 
 
+COREJAR=/3rdparty/Processing.app/Contents/Java/core.jar
+read -e -p "Where is Processings core.jar [$COREJAR]? " answer
+if [ "$answer" != "" ]; then
+	COREJAR=$answer
+fi
+
+
+LIBNAME=$(basename "$PWD").jar
+read -p "What is the libraries name [$LIBNAME]? " answer
+if [ "$answer" != "" ]; then
+	LIBNAME=$answer
+fi
+
+export COREJAR=$COREJAR
+export LIBNAME=$LIBNAME
+
 echo --------------------
 
 
