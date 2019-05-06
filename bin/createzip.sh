@@ -84,13 +84,17 @@ echo "Removing old zip .."
 touch dist/$libname.zip
 rm dist/$libname.zip
 
-echo "Zipping everything to dist/$libname.zip .."
+# zipping. stepping up 1 level 
+# to include the directory in the zip
 
+
+echo "Zipping everything to dist/$libname.zip .."
 
 cd ../
 zip -r $LIBDIRNAME/dist/$libname.zip $FILES
 	
-	
+# library.properties
+
 read -n 1 -p "Copy library.properties next to zip [Y/n]? " answer
 echo
 if [ "$answer" != "${answer#[Nn]}" ] ;then

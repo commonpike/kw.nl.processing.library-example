@@ -38,8 +38,8 @@ find src -name "*.java" -print0 | xargs -0 \
   
 if [ $? -eq 0 ]; then
   
-  echo "Jarring ./build/**.class to ./library/$libname.."
-	jar -cf library/$libname -C build .
+  echo "Jarring ./build/**.class to ./library/$libname.jar .."
+	jar -cf library/$libname.jar -C build .
 
 	echo All done.
 	echo

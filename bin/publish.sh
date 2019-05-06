@@ -13,7 +13,7 @@ if [ "$answer" != "" ]; then
 fi
 
 
-LIBNAME=$(basename "$PWD").jar
+LIBNAME=$(basename "$PWD")
 read -p "What is the libraries name [$LIBNAME]? " answer
 if [ "$answer" != "" ]; then
 	LIBNAME=$answer
