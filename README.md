@@ -140,7 +140,7 @@ to some naming rules:
   - Don't use ``processing`` as the prefix for your library packages
   
 As mentioned under _folder structure_ above, 
-only these files are needed to get your library to work:
+these files are needed to get your library to work:
 
  - the folder `ExampleFooLibrary/library`
  - the file `ExampleFooLibrary/library.properties`
@@ -163,22 +163,23 @@ But these folders in this library are not required:
  - ExampleFooLibrary/README.md is not required.
 
 
-What you will be publishing are two files on a public location 
-with a fixed url. I keep a copy of those two
-files in the git repo, in the `docs/` and `dist/` folders:
+What you will be publishing are three files on a public location 
+with a fixed url. I keep a copy of those three files in the git repo:
 
- - a HTML summary (see `docs/summary.html` for a template)
- - a zip file with the *only the required files* in it (see `dist/ExampleFooLibrary.zip`)
+ - a HTML summary (see `docs/summary.html`)
+ - a text version of the properties file (see `dist/ExampleFooLibrary.txt`)
+ - a zip file with the required files in it (see `dist/ExampleFooLibrary.zip`)
 
-The zip file should unzip to a single folder with the above-mentioned files 
-contained in that folder.
-
-See `bin/createzip.sh` for an example on how to create that zip.
+The zip file should unzip to a single folder with *only the 
+required files, plus those required by the publishing guidelines* 
+contained in that folder. See `bin/createzip.sh` for an example 
+on how to create that zip.
 
 Put these files online (I use github.io) and communicate
-the urls with the Processing maintainers. If they agree
+the 3 urls with the Processing maintainers. If they agree
 to publish it, apparently they will check the library.properties
-in the remote published zip regularly to see if there is a new version.
+in the remote published zip, or its text version alongside it, 
+regularly to see if there is a new version.
 
 See also:
 https://github.com/processing/processing/wiki/Library-Guidelines
