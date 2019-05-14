@@ -6,10 +6,13 @@ This does nothing. Just explains a library structure and is a working example.
 This README is best read at 
 https://github.com/commonpike/nl.kw.processing.library-example
 
-You can download the library at 
+You can download a distribution at 
 https://commonpike.github.io/nl.kw.processing.library-example/dist/ExampleFooLibrary.zip
 
-It has a summary at 
+The distribution does not include everything inside the git repo,
+like the source files, because of the publishing guidelines.
+
+There is also a summary at 
 https://commonpike.github.io/nl.kw.processing.library-example/docs/summary.html
 
 ## Install location
@@ -130,6 +133,8 @@ but now you'll have to do it by hand.
 
 ## Publishing
 
+### naming conventions
+
 According to guidelines, your libraries should adhere
 to some naming rules:
 
@@ -138,9 +143,11 @@ to some naming rules:
   - Same goes for using "Processing", "Pro", or "P5" 
   - The same goes for suffixes
   - Don't use ``processing`` as the prefix for your library packages
+
+### folder structure
   
 As mentioned under _folder structure_ above, 
-only these files are needed to get your library to work:
+these files are needed to get your library to work:
 
  - the folder `ExampleFooLibrary/library`
  - the file `ExampleFooLibrary/library.properties`
@@ -162,19 +169,25 @@ But these folders in this library are not required:
  - ExampleFooLibrary/docs is not required; 
  - ExampleFooLibrary/README.md is not required.
 
+### published files
 
-Again according to the guidelines, you need to have
-two files on a public location with a fixed url. This is 
-what you will 'publish'. I keep a copy of those two
-files in the `docs/` and `dist` folders:
+What you will be publishing are three files on a public location 
+with a fixed url. I keep a copy of those three files in the git repo:
 
- - a HTML summary ; see `docs/summary.html`
- - a zip file with the *only* the required files in it; see `dist/ExampleFooLibrary.zip` on GIT
+ - a HTML summary (see `docs/summary.html`)
+ - a text version of the properties file (see `dist/ExampleFooLibrary.txt`)
+ - a zip file with the required files in it (see `dist/ExampleFooLibrary.zip`)
+
+The zip file should unzip to a single folder with *only the 
+required files, plus those required by the publishing guidelines* 
+contained in that folder. See `bin/createzip.sh` for an example 
+on how to create that zip.
 
 Put these files online (I use github.io) and communicate
-the urls with the Processing maintainers. If they agree
+the 3 urls with the Processing maintainers. If they agree
 to publish it, apparently they will check the library.properties
-in the published zip regularly to see if there is a new version.
+in the remote published zip, or its text version alongside it, 
+regularly to see if there is a new version.
 
 See also:
 https://github.com/processing/processing/wiki/Library-Guidelines
