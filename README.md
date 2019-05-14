@@ -6,10 +6,13 @@ This does nothing. Just explains a library structure and is a working example.
 This README is best read at 
 https://github.com/commonpike/nl.kw.processing.library-example
 
-You can download the library at 
+You can download a distribution at 
 https://commonpike.github.io/nl.kw.processing.library-example/dist/ExampleFooLibrary.zip
 
-It has a summary at 
+The distribution does not include everything inside the git repo,
+like the source files, because of the publishing guidelines.
+
+There is also a summary at 
 https://commonpike.github.io/nl.kw.processing.library-example/docs/summary.html
 
 ## Install location
@@ -130,6 +133,8 @@ but now you'll have to do it by hand.
 
 ## Publishing
 
+### naming conventions
+
 According to guidelines, your libraries should adhere
 to some naming rules:
 
@@ -138,6 +143,8 @@ to some naming rules:
   - Same goes for using "Processing", "Pro", or "P5" 
   - The same goes for suffixes
   - Don't use ``processing`` as the prefix for your library packages
+
+### folder structure
   
 As mentioned under _folder structure_ above, 
 these files are needed to get your library to work:
@@ -162,6 +169,7 @@ But these folders in this library are not required:
  - ExampleFooLibrary/docs is not required; 
  - ExampleFooLibrary/README.md is not required.
 
+### published files
 
 What you will be publishing are three files on a public location 
 with a fixed url. I keep a copy of those three files in the git repo:
