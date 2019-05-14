@@ -58,16 +58,16 @@ fi
 echo --------------------
 
 
-read -n 1 -p "Create zip for publishing [Y/n]? " answer
+read -n 1 -p "Create dist for publishing [Y/n]? " answer
 echo
 if [ "$answer" != "${answer#[Nn]}" ] ;then
 
-	echo Skipping zip ...
+	echo Skipping dist ...
 	echo
 	
 else
 
-	bin/createzip.sh
+	bin/createdist.sh
 	
 	
 fi
@@ -92,8 +92,9 @@ if [ -d ".git" ]; then
 		git commit
 		
 		BRANCH=`git branch | grep -e "^*" | cut -d' ' -f 2`
-		read -n 1 -p "Push $BRANCH too [Y/n]? " answer
+		
 		echo
+		read -n 1 -p "Push $BRANCH too [Y/n]? " answer
 		if [ "$answer" != "${answer#[Nn]}" ] ;then
 			echo Skipping push ...
 		else 
@@ -103,6 +104,7 @@ if [ -d ".git" ]; then
 				REMOTE=$answer
 			fi
 			git push $REMOTE $BRANCH
+			echo
 		fi
 		
 		
