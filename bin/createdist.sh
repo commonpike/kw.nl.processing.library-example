@@ -105,15 +105,6 @@ else
 	cp -v $LIBDIRNAME/library.properties $LIBDIRNAME/dist/$libname.txt
 fi	
 	
-# summary.html
-
-read -n 1 -p "Copy summary.html next to zip [Y/n]? " answer
-echo
-if [ "$answer" != "${answer#[Nn]}" ] ;then
-	echo "Skipping props file ..."
-else
-	cp -v $LIBDIRNAME/docs/summary.html $LIBDIRNAME/dist/summary.html
-fi	
 	
 echo All done.
 
