@@ -7,7 +7,7 @@ cd `dirname $0`/..
 
 
 if [ "$LIBNAME" = "" ]; then
-	LIBNAME=$(basename "$PWD").jar
+	LIBNAME=$(basename "$PWD")
 	read -p "What is the libraries name [$LIBNAME]? " libname
 	if [ "$libname" = "" ]; then
 		libname=$LIBNAME
@@ -80,6 +80,8 @@ fi
 echo "Some cleanup .."
 find . -name '.DS_Store' -exec rm -v {} \;
 
+mkdir -p dist
+
 echo "Removing old zip .."
 touch dist/$libname.zip
 rm dist/$libname.zip
@@ -101,6 +103,16 @@ if [ "$answer" != "${answer#[Nn]}" ] ;then
 	echo "Skipping props file ..."
 else
 	cp -v $LIBDIRNAME/library.properties $LIBDIRNAME/dist/$libname.txt
+fi	
+	
+# summary.html
+
+read -n 1 -p "Copy summary.html next to zip [Y/n]? " answer
+echo
+if [ "$answer" != "${answer#[Nn]}" ] ;then
+	echo "Skipping props file ..."
+else
+	cp -v $LIBDIRNAME/docs/summary.html $LIBDIRNAME/dist/summary.html
 fi	
 	
 echo All done.

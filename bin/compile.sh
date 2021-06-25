@@ -2,8 +2,13 @@
 
 cd `dirname $0`/..
 
+JAVAVERSION=1.8;
+
+mkdir -p build
+mkdir -p library
+
 if [ "$COREJAR" = "" ]; then
-	COREJAR=/3rdparty/Processing.app/Contents/Java/core.jar
+	COREJAR=/Applications/3rdparty/Processing.app/Contents/Java/core.jar
 	read -e -p "Where is Processings core.jar [$COREJAR]? " corejar
 	if [ "$corejar" = "" ]; then
 		corejar=$COREJAR
@@ -14,7 +19,8 @@ fi
 
 
 if [ "$LIBNAME" = "" ]; then
-	LIBNAME=$(basename "$PWD").jar
+	LIBNAME=$(basename "$PWD")
+	# note: only alphanumeric
 	read -p "What is the libraries name [$LIBNAME]? " libname
 	if [ "$libname" = "" ]; then
 		libname=$LIBNAME
@@ -32,8 +38,9 @@ fi
 echo
 echo 'Compiling src/**.java to ./build/*.class ..'
 
-find src -name "*.java" -print0 | xargs -0 \
- javac -d build -classpath "$corejar"
+find . -name "*.java" -print0 | xargs -0 \
+ javac -source $JAVAVERSION -target $JAVAVERSION \
+ -d build -classpath "$corejar"
 
   
 if [ $? -eq 0 ]; then
