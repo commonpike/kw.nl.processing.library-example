@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"nl.kw.processing.ExampleBazPackage","l":"ExampleBar"},{"p":"nl.kw.processing.ExampleBazPackage","l":"ExampleQuz"}]
