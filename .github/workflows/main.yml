@@ -52,7 +52,7 @@ jobs:
         run: |
           git config --global user.name 'Github CI'
           git config --global user.email 'ci@users.noreply.github.com'
-          git add library dist
+          git add library reference dist
           git add -u
           git status
           git commit -m "CI Generated files"
