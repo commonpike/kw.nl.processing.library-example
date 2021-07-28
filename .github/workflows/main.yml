@@ -32,10 +32,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Download core.jar
         run: |
-          mkdir tmp
-          cd tmp
-          curl $COREURL -o core.jar
-          cd ../
+          mkdir -p `dirname $COREJAR`
+          curl $COREURL -o $COREJAR
       - name: compile
         run: |
           bin/compile.sh
