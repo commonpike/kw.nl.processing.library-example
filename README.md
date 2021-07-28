@@ -1,5 +1,6 @@
 20181114*pike
 # Example Processing 3 Library
+<https://commonpike.github.io/nl.kw.processing.library-example>
 
 This does nothing. Just explains a library structure and is a working example.
 
@@ -11,6 +12,9 @@ https://commonpike.github.io/nl.kw.processing.library-example/dist/ExampleFooLib
 
 The distribution does not include everything inside the git repo,
 like the source files, because of the publishing guidelines.
+
+For the full reference, see 
+<https://commonpike.github.io/nl.kw.processing.library-example/reference/>
 
 There is also a summary at 
 https://commonpike.github.io/nl.kw.processing.library-example/docs/summary.html
