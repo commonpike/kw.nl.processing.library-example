@@ -48,11 +48,12 @@ jobs:
         run: |
           bin/createdist.sh
           exit $?
-      # https://stackoverflow.com/questions/58353392/how-to-save-build-files-react-using-github-actions
-      # error: detached head
       - name: Commit generated files
         run: |
           git config --global user.name 'Github CI'
           git config --global user.email 'ci@users.noreply.github.com'
-          git commit -am "CI Generated files"
+          git add library dist
+          git add -u
+          git status
+          git commit -m "CI Generated files"
           git push
