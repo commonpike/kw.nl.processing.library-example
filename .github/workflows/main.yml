@@ -30,6 +30,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
       - name: Download core.jar
         run: |
           mkdir -p `dirname $COREJAR`
@@ -46,11 +48,12 @@ jobs:
         run: |
           bin/createdist.sh
           exit $?
-      # https://stackoverflow.com/questions/58353392/how-to-save-build-files-react-using-github-actions
-      # error: detached head
-      #- name: Commit generated files
-      #  run: |
-      #    git config --global user.name 'Github Action'
-      #    git config --global user.email 'actions@users.noreply.github.com'
-      #    git commit -am "CI Generated files"
-      #    git push
+      - name: Commit generated files
+        run: |
+          git config --global user.name 'Github CI'
+          git config --global user.email 'ci@users.noreply.github.com'
+          git add library reference dist
+          git add -u
+          git status
+          git commit -m "CI Generated files"
+          git push
