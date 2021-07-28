@@ -30,6 +30,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
       - name: Download core.jar
         run: |
           mkdir -p `dirname $COREJAR`
