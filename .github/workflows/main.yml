@@ -34,15 +34,15 @@ jobs:
         run: |
           mkdir -p `dirname $COREJAR`
           curl $COREURL -o $COREJAR
-      - name: compile
+      - name: Compile
         run: |
           bin/compile.sh
           exit $?
-      - name: javadoc
+      - name: Create javadoc
         run: |
           bin/javadoc.sh
           exit $?
-      - name: createdist
+      - name: Create dist
         run: |
           bin/createdist.sh
           exit $?
