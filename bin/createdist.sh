@@ -97,11 +97,7 @@ zip -r $LIBDIRNAME/dist/$libname.zip $FILES
 	
 # library.properties
 
-read -n 1 -p "Copy library.properties next to zip [Y/n]? " answer
-echo
-if [ "$answer" != "${answer#[Nn]}" ] ;then
-	echo "Skipping props file ..."
-else
+if [ -f "library.properties" ]; then
 	cp -v $LIBDIRNAME/library.properties $LIBDIRNAME/dist/$libname.txt
 fi	
 	
