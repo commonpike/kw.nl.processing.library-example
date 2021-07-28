@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 env:
-    COREJAR: /Applications/3rdparty/Processing.app/Contents/Java/core.jar
+    COREJAR: tmp/processing-core.jar
     LIBNAME: ExampleFooLibrary
 
 # A workflow run is made up of one or more jobs that can 
@@ -29,16 +29,21 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
+      - name: Download core.jar
+        run: |
+          mkdir tmp
+          curl http://www.java2s.com/Code/JarDownload/processing/processing-core.jar.zip -o tmp/
+          unzip tmp/processing-core.jar.zip
+          ls tmp
       - name: compile
         run: |
-            bin/compile.sh
-            exit $?
+          bin/compile.sh
+          exit $?
       - name: javadoc
         run: |
-            bin/javadoc.sh
-            exit $?
+          bin/javadoc.sh
+          exit $?
       - name: createdist
         run: |
-            bin/createdist.sh
-            exit $?
+          bin/createdist.sh
+          exit $?
