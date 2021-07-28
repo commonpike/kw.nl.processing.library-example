@@ -32,9 +32,10 @@ jobs:
       - name: Download core.jar
         run: |
           mkdir tmp
-          curl http://www.java2s.com/Code/JarDownload/processing/processing-core.jar.zip -o tmp/processing-core.jar.zip
-          unzip tmp/processing-core.jar.zip
-          ls tmp
+          cd tmp
+          curl http://www.java2s.com/Code/JarDownload/processing/processing-core.jar.zip -o processing-core.jar.zip
+          unzip processing-core.jar.zip
+          cd ../
       - name: compile
         run: |
           bin/compile.sh
