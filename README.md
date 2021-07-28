@@ -34,6 +34,7 @@ following files, with those exact names, are required:
  - it must contain a file `ExampleFooLibrary/library.properties`
  - it must contain a file `ExampleFooLibrary/library/ExampleFooLibrary.jar`
 
+Note the name of the jar is the name of the folder.
 
 This is all that is required to get it to work. 
 If it has these things, and it is in the right location,
@@ -98,6 +99,7 @@ vi folder/foo/whatever/ExampleQuz.java
 cd ../
 
 javac -d build/ -classpath /path/to/processing/core.jar \
+ -source 1.8 -target 1.8 \
  ./src/*.java ./src/folder/foo/whatever/*java
 
 jar -cf library/ExampleFooLibrary.jar -C build/ .
@@ -127,6 +129,10 @@ But Processings `random()` and `noise()` don't belong to
 java.lang.Math. You'll have to rewrite them.
 
 Also remember, `color` is not a java type. Rewrite it to `int`.
+
+PDE's will often use `float` where java expects `double`.
+
+Symbols like `TWO_PI` are now located at `PConstants.TWO_PI`.
 
 All this rewriting is done in the PDE by the _PDE Precompiler_,
 but now you'll have to do it by hand. 
