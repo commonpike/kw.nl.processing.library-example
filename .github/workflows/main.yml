@@ -33,7 +33,7 @@ jobs:
       - name: compile
         run: |
             bin/compile.sh
-            exit 1
+            exit $?
       - name: javadoc
         run: |
             bin/javadoc.sh
