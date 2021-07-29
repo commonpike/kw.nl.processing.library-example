@@ -1,4 +1,4 @@
-20181114*pike 
+20181114*pike
 # Example Processing 3 Library
 <https://commonpike.github.io/nl.kw.processing.library-example>
 
